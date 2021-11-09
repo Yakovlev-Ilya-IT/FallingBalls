@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3d3fd134d9d03429e6694c80d183df, type: 3}
+  m_Name: EnemyConfigurationGenerator
+  m_EditorClassIdentifier: 
+  _minSpeed: 2
+  _maxSpeed: 4
+  _minRewardPoints: 15
+  _maxRewardPoints: 45
+  _minDamage: 10
+  _maxDamage: 15
+  _colors:
+  - {r: 1, g: 0.3726415, b: 0.3726415, a: 1}
+  - {r: 1, g: 0.7469491, b: 0, a: 1}
+  - {r: 1, g: 0.3160377, b: 0.98161393, a: 1}
+  - {r: 0.28773582, g: 0.794573, b: 1, a: 1}
+  - {r: 0.08418894, g: 0, b: 1, a: 1}
+  - {r: 0.6169391, g: 1, b: 0.43867922, a: 1}
+  - {r: 1, g: 0.43750405, b: 0, a: 1}
+  - {r: 0.40771866, g: 0, b: 1, a: 1}
+  _correlationWithDifficult: 1.2
