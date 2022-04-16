@@ -4,15 +4,14 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField]private Image _fill;
-    [SerializeField] private Player _player;
+    private const float FullFilling = 1;
 
-    private void Start()
+    public void Initialize()
     {
-        _player.HealthChanged += OnHealthChanged;
-        _fill.fillAmount = 1;
+        _fill.fillAmount = FullFilling;
     }
 
-    public void OnHealthChanged(float value)
+    public void SetHealth(float value)
     {
         _fill.fillAmount = value;
     }

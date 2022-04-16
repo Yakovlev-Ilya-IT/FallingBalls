@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu (menuName = "Enemy/Factories")]
 public class EnemyFactory : ScriptableObject
 {
     [SerializeField] Enemy _prefab;
@@ -10,14 +10,8 @@ public class EnemyFactory : ScriptableObject
     public Enemy Get(int diffcult)
     {
         Enemy instance = Instantiate(_prefab);
-        instance.Factory = this;
         EnemyConfiguration enemyConfiguration = _enemyConfigurationGenerator.Get(diffcult);
         instance.Initizalize(enemyConfiguration);
         return instance;
-    }
-
-    public void Remove(Enemy enemy)
-    {
-        Destroy(enemy.gameObject);
     }
 }

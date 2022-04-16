@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c1ca8c4e6b952242847e4654ff4b6c4, type: 3}
-  m_Name: ScoreSaver
+  m_Script: {fileID: 11500000, guid: ec04f00f9c3b8e04eab0657e89235890, type: 3}
+  m_Name: DifficultConfig
   m_EditorClassIdentifier: 
+  _startDifficultLevel: 1
+  _difficultStep: 1
+  _pointsToIncreaseDiffcuilty: 20
+  _multiplierPointsToIncreaseDiffcuilty: 2

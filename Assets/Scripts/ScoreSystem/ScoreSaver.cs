@@ -2,23 +2,24 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-[CreateAssetMenu]
-public class ScoreSaver : ScriptableObject
+public class ScoreSaver
 {
-    public void SaveMaxScore(int scoreToSave)
+    public bool TrySaveMaxScore(int scoreToSave)
     {
         if (GetSavedScore() < scoreToSave)
         {
             SaveScore(scoreToSave);
+            return true;
         }
+        return false;
     }
 
     private void SaveScore(int scoreToSave)
     {
-        BinaryFormatter bf = new BinaryFormatter();
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath
           + "/SavedData.dat");
-        bf.Serialize(file, scoreToSave);
+        binaryFormatter.Serialize(file, scoreToSave);
         file.Close();
     }
 
@@ -27,24 +28,14 @@ public class ScoreSaver : ScriptableObject
         if (File.Exists(Application.persistentDataPath
           + "/SavedData.dat"))
         {
-            BinaryFormatter bf = new BinaryFormatter();
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath
           + "/SavedData.dat", FileMode.Open);
-            int savedScore = (int)bf.Deserialize(file);
+            int savedScore = (int)binaryFormatter.Deserialize(file);
             file.Close();
             return savedScore;
         }
+
         else return 0;
     }
-
-    //public void DeleteSavedScore()
-    //{
-    //    if (File.Exists(Application.persistentDataPath
-    //      + "/SavedData.dat"))
-    //    {
-    //        File.Delete(Application.persistentDataPath + "/SavedData.dat");
-    //        Debug.Log("saved score deleted");
-    //    }
-    //    else Debug.Log("No saved score to delete");
-    //}
 }
